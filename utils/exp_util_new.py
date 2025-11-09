@@ -261,7 +261,7 @@ def extract_data_type2(experiment, channels, suffix='vd2'):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = 'raw-data/{}/'.format(experiment_map[cell])
+            dir = '../../raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0
@@ -512,7 +512,7 @@ def extract_data(experiment, channels):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = 'raw-data/{}/'.format(experiment_map[cell])
+            dir = '../../raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0
@@ -707,7 +707,7 @@ def extract_data(experiment, channels):
     return cell_idx, cap_ds, data
 
 # Identify the filenames associated with particular cell cycle
-def path_to_file(channel, cell, cycle, dir='raw-data/variable-discharge/'):
+def path_to_file(channel, cell, cycle, dir='../../raw-data/variable-discharge/'):
     sub_dir = '{}{}_{}/'.format(dir, cell, channel)
     file_start = '{}_{:03d}_'.format(cell, cycle)
     return sub_dir + file_start

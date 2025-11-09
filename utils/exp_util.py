@@ -174,7 +174,7 @@ def extract_data(experiment, channels):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = 'raw-data/{}/'.format(experiment_map[cell])
+            dir = '../../raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0
@@ -391,7 +391,7 @@ def extract_data(experiment, channels):
 # 文件路径辅助函数
 # ============================================================================
 
-def path_to_file(channel, cell, cycle, dir='raw-data/variable-discharge/'):
+def path_to_file(channel, cell, cycle, dir='../../raw-data/variable-discharge/'):
     """
     构建数据文件路径前缀
     
@@ -408,7 +408,7 @@ def path_to_file(channel, cell, cycle, dir='raw-data/variable-discharge/'):
     
     返回:
     ----
-    str : 文件路径前缀，如'raw-data/variable-discharge/PJ097_1/PJ097_002_'
+    str : 文件路径前缀，如'../../raw-data/variable-discharge/PJ097_1/PJ097_002_'
     """
     sub_dir = '{}{}_{}/'.format(dir, cell, channel)
     file_start = '{}_{:03d}_'.format(cell, cycle)
@@ -1291,7 +1291,7 @@ def extract_n_step_data(experiment, channels):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = 'raw-data/{}/'.format(experiment_map[cell])
+            dir = '../../raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0

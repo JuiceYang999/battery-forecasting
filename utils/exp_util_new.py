@@ -99,9 +99,6 @@ experiment_map = {'PJ097':'variable-discharge',
                   'PJ229':'15-minutes',
                   'PJ230':'15-minutes',
                   'PJ231':'15-minutes',
-                  'PJ248':'chemistry2-25C',
-                  'PJ249':'chemistry2-25C',
-                  'PJ250':'chemistry2-25C',
                   'PJ251':'chemistry2-25C',
                   'PJ252':'chemistry2-25C',
                   'PJ253':'chemistry2-25C',
@@ -261,7 +258,7 @@ def extract_data_type2(experiment, channels, suffix='vd2'):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = '../../raw-data/{}/'.format(experiment_map[cell])
+            dir = 'raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0
@@ -512,7 +509,7 @@ def extract_data(experiment, channels):
             cell_no = int(cell[-3:])
             #cmap = plt.get_cmap(name, 70)
             #cell_ars = []
-            dir = '../../raw-data/{}/'.format(experiment_map[cell])
+            dir = 'raw-data/{}/'.format(experiment_map[cell])
 
             # First get the initial EIS and GCPL
             cycle = 0
@@ -707,7 +704,7 @@ def extract_data(experiment, channels):
     return cell_idx, cap_ds, data
 
 # Identify the filenames associated with particular cell cycle
-def path_to_file(channel, cell, cycle, dir='../../raw-data/variable-discharge/'):
+def path_to_file(channel, cell, cycle, dir='raw-data/variable-discharge/'):
     sub_dir = '{}{}_{}/'.format(dir, cell, channel)
     file_start = '{}_{:03d}_'.format(cell, cycle)
     return sub_dir + file_start
@@ -1274,9 +1271,9 @@ def identify_cells(experiment):
                 'B7':['PJ214','PJ230'],
                 'B8':['PJ215','PJ231'],}
     elif experiment == 'variable-discharge-type2':
-        cell_map = {'A1':['PJ248','PJ264',],
-                'A2':['PJ249','PJ265',],
-                'A3':['PJ250','PJ266',],
+        cell_map = {'A1':['PJ264',],
+                'A2':['PJ265',],
+                'A3':['PJ266',],
                 'A4':['PJ251','PJ267',],
                 'A5':['PJ252','PJ268',],
                 'A6':['PJ253','PJ269',],

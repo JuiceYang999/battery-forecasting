@@ -196,7 +196,7 @@ class XGBModel:
         # 定义4组电池的分割映射
         # 每组8个电池，尽量保证分布均匀
         split_map = {
-            0: ['PJ248', 'PJ249', 'PJ250', 'PJ251', 'PJ264', 'PJ265', 'PJ266', 'PJ267'],
+            0: ['PJ250', 'PJ251', 'PJ264', 'PJ265', 'PJ266', 'PJ267'],
             1: ['PJ252', 'PJ253', 'PJ254', 'PJ255', 'PJ268', 'PJ269', 'PJ270', 'PJ271'],
             2: ['PJ256', 'PJ257', 'PJ258', 'PJ259', 'PJ272', 'PJ273', 'PJ274', 'PJ275'],
             3: ['PJ260', 'PJ261', 'PJ262', 'PJ263', 'PJ276', 'PJ277', 'PJ278', 'PJ279'],
@@ -371,7 +371,7 @@ class XGBModel:
             regr = xgb.XGBRegressor(
                 max_depth=self.max_depth, 
                 n_estimators=self.n_estimators, 
-                random_state=ensemble_state + self.n_split
+                random_state=ensemble_state + self.n_split, n_jobs=-1
             )
             
             # 使用Bootstrap采样的数据训练模型
@@ -536,7 +536,7 @@ class XGBModel:
             regr = xgb.XGBRegressor(
                 max_depth=self.max_depth, 
                 n_estimators=self.n_estimators, 
-                random_state=ensemble_state + self.n_split
+                random_state=ensemble_state + self.n_split, n_jobs=-1
             )
             regr.fit(X_train[idx], y_train[idx])
 
@@ -686,7 +686,7 @@ class XGBModel:
             regr = xgb.XGBRegressor(
                 max_depth=self.max_depth, 
                 n_estimators=self.n_estimators, 
-                random_state=ensemble_state + self.n_split
+                random_state=ensemble_state + self.n_split, n_jobs=-1
             )
             regr.fit(X_train[idx], y_train[idx])
 

@@ -50,8 +50,20 @@ log_name = 'experiments/results/{}/log-next-cycle-12s.txt'.format(experiment)
 # - 'ecmr-cvfs-ct-c-actions': Randles等效电路模型 + C-V曲线 + 累积吞吐量 + 上一容量 + 速率
 # - 'ecmer-cvfs-ct-c-actions': 扩展Randles模型 + C-V曲线 + 累积吞吐量 + 上一容量 + 速率
 # - 'eis-cvfs-ct-c-actions': EIS + C-V曲线 + 累积吞吐量 + 上一容量 + 速率
-input_names = ['ecmr-cvfs-ct-c-actions', 'ecmer-cvfs-ct-c-actions', 'eis-cvfs-ct-c-actions']
-
+#input_names = ['ecmr-cvfs-ct-c-actions', 'ecmer-cvfs-ct-c-actions', 'eis-cvfs-ct-c-actions']
+input_names = [
+    'actions',              # 对应 "Protocol only"
+    'eis',                  # 对应 "EIS only"
+    'eis-actions',          # 对应 "EIS + Protocol"
+    'ecmr-actions',         # 对应 "ECM-R + Protocol"
+    'ecmer-actions',        # 对应 "ECM-ER + Protocol"
+    'soh-actions',          # 对应 "SOH + Protocol" (近似)
+    'cvfs-actions',         # 对应 "CVF + Protocol"
+    'ct-actions',           # 对应 "CT + Protocol" (近似)
+    'c-actions',            # 对应 "Qn-1 + Protocol" (近似)
+    'eis-cvfs-actions',     # 对应 "EIS + CVF + Protocol"
+    'eis-cvfs-ct-c-actions' # 对应 "EIS + CVF + CT+Q-1+ Protocol"
+]
 # ============================================================================
 # 数据提取
 # ============================================================================
